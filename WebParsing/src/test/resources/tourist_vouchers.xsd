@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="TouristVouchers">
+        <xs:complexType>
+            <xs:sequence>
+
+                <xs:element name="Voucher"
+                            minOccurs="0"
+                            maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+
+                            <xs:element name="Location">
+                                <xs:complexType>
+                                    <xs:attribute name="countryCode" use="required">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:pattern value="[A-Z][A-Z]"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="city" type="xs:string" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+
+                            <xs:element name="Duration">
+                                <xs:complexType>
+                                    <xs:attribute name="days" type="xs:unsignedInt" use="required"/>
+                                    <xs:attribute name="nights" type="xs:unsignedInt" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+
+                            <xs:element name="Transports">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Transport"
+                                                    minOccurs="0"
+                                                    maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:attribute name="type" use="required">
+                                                    <xs:simpleType>
+                                                        <xs:restriction base="xs:string">
+                                                            <xs:enumeration value="car"/>
+                                                            <xs:enumeration value="bus"/>
+                                                            <xs:enumeration value="plane"/>
+                                                            <xs:enumeration value="train"/>
+                                                            <xs:enumeration value="taxi"/>
+                                                        </xs:restriction>
+                                                    </xs:simpleType>
+                                                </xs:attribute>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+
+                            <xs:element name="Hotel">
+                                <xs:complexType>
+                                    <xs:sequence>
+
+                                        <xs:element name="Name" type="xs:string"/>
+
+                                        <xs:element name="Rooms">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Room"
+                                                                maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+
+                                                                <xs:element name="RoomFacilities">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element name="RoomFacility"
+                                                                                        minOccurs="0"
+                                                                                        maxOccurs="unbounded">
+                                                                                <xs:complexType>
+                                                                                    <xs:attribute name="type" use="required">
+                                                                                        <xs:simpleType>
+                                                                                            <xs:restriction base="xs:string">
+                                                                                                <xs:enumeration value="wi_fi"/>
+                                                                                                <xs:enumeration value="air_conditioning"/>
+                                                                                                <xs:enumeration value="tv"/>
+                                                                                                <xs:enumeration value="hair_dryer"/>
+                                                                                                <xs:enumeration value="shampoo"/>
+                                                                                                <xs:enumeration value="towel"/>
+                                                                                            </xs:restriction>
+                                                                                        </xs:simpleType>
+                                                                                    </xs:attribute>
+
+                                                                                    <xs:attribute name="cost" type="xs:unsignedInt"/>
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+
+                                                            </xs:sequence>
+                                                            <xs:attribute name="beds" type="xs:unsignedInt" use="required"/>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+
+                                    </xs:sequence>
+                                    <xs:attribute name="stars" type="xs:unsignedInt" use="required"/>
+                                    <xs:attribute name="eats" use="required">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:enumeration value="OB"/>
+                                                <xs:enumeration value="BB"/>
+                                                <xs:enumeration value="HB"/>
+                                                <xs:enumeration value="FB"/>
+                                                <xs:enumeration value="FB_PLUS"/>
+                                                <xs:enumeration value="AL"/>
+                                                <xs:enumeration value="UAI"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+
+                            <xs:element name="Cost">
+                                <xs:complexType>
+                                    <xs:sequence>
+
+                                        <xs:element name="Facilities">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Facility"
+                                                                minOccurs="0"
+                                                                maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="type" use="required">
+                                                                <xs:simpleType>
+                                                                    <xs:restriction base="xs:string">
+                                                                        <xs:enumeration value="excursion"/>
+                                                                        <xs:enumeration value="guide"/>
+                                                                        <xs:enumeration value="translator"/>
+                                                                        <xs:enumeration value="insurance"/>
+                                                                    </xs:restriction>
+                                                                </xs:simpleType>
+                                                            </xs:attribute>
+
+                                                            <xs:attribute name="cost" type="xs:unsignedInt"/>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+
+                                    </xs:sequence>
+                                    <xs:attribute name="price" type="xs:unsignedInt" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+
+                        </xs:sequence>
+                        <xs:attribute name="type" use="required">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="day_off"/>
+                                    <xs:enumeration value="excursion"/>
+                                    <xs:enumeration value="relaxation"/>
+                                    <xs:enumeration value="pilgrimage"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

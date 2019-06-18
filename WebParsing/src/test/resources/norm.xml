@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<TouristVouchers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:noNamespaceSchemaLocation="tourist_vouchers.xsd">
+    <Voucher type="pilgrimage">
+        <Location countryCode="VA" city="Vatican"/>
+        <Duration days="5" nights="4"/>
+        <Transports>
+            <Transport type="train"/>
+            <Transport type="taxi"/>
+        </Transports>
+        <Hotel stars="5" eats="HB">
+            <Name>Last journey</Name>
+            <Rooms>
+                <Room beds="1">
+                    <RoomFacilities>
+                        <RoomFacility type="shampoo"/>
+                        <RoomFacility type="towel" cost="0"/>
+                    </RoomFacilities>
+                </Room>
+            </Rooms>
+        </Hotel>
+        <Cost price="300">
+            <Facilities>
+                <Facility type="insurance"/>
+            </Facilities>
+        </Cost>
+    </Voucher>
+</TouristVouchers>
