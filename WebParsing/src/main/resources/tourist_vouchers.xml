@@ -25,28 +25,4 @@
             </Facilities>
         </Cost>
     </Voucher>
-    <Voucher type="day_off">
-        <Location countryCode="VA" city="Vatican"/>
-        <Duration days="5" nights="4"/>
-        <Transports>
-            <Transport type="train"/>
-            <Transport type="taxi"/>
-        </Transports>
-        <Hotel stars="5" eats="HB">
-            <Name>Last journey</Name>
-            <Rooms>
-                <Room beds="1">
-                    <RoomFacilities>
-                        <RoomFacility type="shampoo"/>
-                        <RoomFacility type="towel" cost="0"/>
-                    </RoomFacilities>
-                </Room>
-            </Rooms>
-        </Hotel>
-        <Cost price="300">
-            <Facilities>
-                <Facility type="insurance"/>
-            </Facilities>
-        </Cost>
-    </Voucher>
 </TouristVouchers>

@@ -5,8 +5,8 @@
             <xs:sequence>
 
                 <xs:element name="Voucher"
-                            minOccurs="0"
-                            maxOccurs="unbounded">
+                         minOccurs="0"
+                         maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
 
@@ -68,32 +68,32 @@
                                                         <xs:complexType>
                                                             <xs:sequence>
 
-                                                                <xs:element name="RoomFacilities">
-                                                                    <xs:complexType>
-                                                                        <xs:sequence>
-                                                                            <xs:element name="RoomFacility"
-                                                                                        minOccurs="0"
-                                                                                        maxOccurs="unbounded">
-                                                                                <xs:complexType>
-                                                                                    <xs:attribute name="type" use="required">
-                                                                                        <xs:simpleType>
-                                                                                            <xs:restriction base="xs:string">
-                                                                                                <xs:enumeration value="wi_fi"/>
-                                                                                                <xs:enumeration value="air_conditioning"/>
-                                                                                                <xs:enumeration value="tv"/>
-                                                                                                <xs:enumeration value="hair_dryer"/>
-                                                                                                <xs:enumeration value="shampoo"/>
-                                                                                                <xs:enumeration value="towel"/>
-                                                                                            </xs:restriction>
-                                                                                        </xs:simpleType>
-                                                                                    </xs:attribute>
+                                                            <xs:element name="RoomFacilities">
+                                                                <xs:complexType>
+                                                                    <xs:sequence>
+                                                                        <xs:element name="RoomFacility"
+                                                                                    minOccurs="0"
+                                                                                    maxOccurs="unbounded">
+                                                                            <xs:complexType>
+                                                                                <xs:attribute name="type" use="required">
+                                                                                    <xs:simpleType>
+                                                                                        <xs:restriction base="xs:string">
+                                                                                            <xs:enumeration value="wi_fi"/>
+                                                                                            <xs:enumeration value="air_conditioning"/>
+                                                                                            <xs:enumeration value="tv"/>
+                                                                                            <xs:enumeration value="hair_dryer"/>
+                                                                                            <xs:enumeration value="shampoo"/>
+                                                                                            <xs:enumeration value="towel"/>
+                                                                                        </xs:restriction>
+                                                                                    </xs:simpleType>
+                                                                                </xs:attribute>
 
-                                                                                    <xs:attribute name="cost" type="xs:unsignedInt"/>
-                                                                                </xs:complexType>
-                                                                            </xs:element>
-                                                                        </xs:sequence>
-                                                                    </xs:complexType>
-                                                                </xs:element>
+                                                                                <xs:attribute name="cost" type="xs:unsignedInt"/>
+                                                                            </xs:complexType>
+                                                                        </xs:element>
+                                                                    </xs:sequence>
+                                                                </xs:complexType>
+                                                            </xs:element>
 
                                                             </xs:sequence>
                                                             <xs:attribute name="beds" type="xs:unsignedInt" use="required"/>
